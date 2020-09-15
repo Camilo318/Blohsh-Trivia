@@ -3,10 +3,26 @@
 @import "tailwindcss/components";
 
 body {
-    font-family: 'Poppins'
+    font-family: 'Poppins';
+    background-color: #4c51bf;
+}
+
+.card-image {
+    top: -13%;
 }
 .option {
-    @apply my-6 px-5 py-3 border-2 border-option bg-white rounded-12 flex items-center text-option font-medium text-lg;
+    @apply mt-6 px-5 py-3 border-2 border-option bg-white rounded-12 flex items-center text-option font-medium text-lg cursor-pointer;
+}
+
+.option:hover {
+    @apply bg-select text-white border-select;
+}
+
+.option.correct {
+    @apply bg-correct text-white border-correct;
+}
+.option.wrong {
+    @apply bg-wrong text-white border-wrong;
 }
 
 @import "tailwindcss/utilities";
