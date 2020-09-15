@@ -4,7 +4,7 @@ import data from './data.json'
 
 const App = () => {
     return (
-        <main className='bg-indigo-700 h-screen p-4 sm:p-6'>
+        <main className='bg-indigo-700 h-screen p-4 sm:p-6 grid place-items-center'>
             <Card />
         </main>
         
