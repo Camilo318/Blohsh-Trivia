@@ -4,6 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
+    "dev": "npm run build:css && webpack-dev-server --mode development --open",
     "start": "concurrently \"npm run watch\" \"webpack-dev-server --mode development --open\"",
     "build": "npm run build:css && webpack --mode production",
     "watch": "postcss src/assets/styles/tailwind.css -o src/assets/styles/main.css --watch",
