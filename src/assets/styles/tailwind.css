@@ -7,11 +7,8 @@ body {
     background-color: #4c51bf;
 }
 
-.card-image {
-    top: -13%;
-}
 .option {
-    @apply mt-6 px-5 py-3 border-2 border-option bg-white rounded-12 flex items-center text-option font-medium text-lg cursor-pointer;
+    @apply mt-6 px-5 py-3 border-2 border-option bg-white rounded-12 flex items-center text-option font-medium cursor-pointer;
 }
 
 .option:hover {

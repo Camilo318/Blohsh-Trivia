@@ -623,10 +623,6 @@ body {
   background-color: #4c51bf;
 }
 
-.card-image {
-  top: -13%;
-}
-
 .option {
   margin-top: 1.5rem;
   padding-left: 1.25rem;
@@ -647,7 +643,6 @@ body {
   color: #9094DE;
   color: rgba(144, 148, 222, var(--text-opacity));
   font-weight: 500;
-  font-size: 1.125rem;
   cursor: pointer;
 }
 
