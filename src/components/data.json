@@ -1,16 +1,6 @@
 {
-    "loaders": [
-      {
-        "name": "css-loader",
-        "id": "1"
-      },
-      {
-        "name": "style-loader",
-        "id": "2"
-      },
-      {
-        "name": "babel-loader",
-        "id": "3"
-      }
-    ]
+  "questions": [
+    "Which country does this flag belong to?",
+    "is the capital of"
+  ]
 }

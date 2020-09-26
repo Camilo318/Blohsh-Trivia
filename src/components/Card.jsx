@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Option from './Option'
-import adventure from '../assets/images/undraw_adventure.svg'
-
+import questions from './data.json'
 
 
 const Card = () => {
@@ -21,8 +20,8 @@ const Card = () => {
     return (
         <div className='bg-white rounded-24 px-4 sm:px-8 py-8 sm:py-16 relative max-w-lg'>
             <img src={data[0].flag} alt="Country Flag"
-            className="w-32 mx-auto"/>
-            <h3 className='text-lg sm:text-2xl font-bold text-heading mt-6'>What is the capital Colombia?</h3>
+            className="w-32 mx-auto rounded"/>
+            <h3 className='text-lg sm:text-2xl font-bold text-heading mt-6'>{questions.questions[0]}</h3>
             <Option opt='A' value={data[0].capital}/>
             <Option opt='B' value={'Billie'}/>
             <Option opt='C' value={'Billie'}/>
