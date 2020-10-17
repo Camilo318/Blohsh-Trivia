@@ -37,8 +37,9 @@ const Card = () => {
         setShowNext(false)
     }
     const checkAnswer = (e) => {
+        console.log('Checking')
         const selectedOption = e.currentTarget.dataset.q
-        
+
         if (selectedOption === correct) {
             e.currentTarget.classList.add('correct')
             setShowNext(true)
@@ -56,7 +57,7 @@ const Card = () => {
             </h3>
 
             <div>
-            {  useMemo(() => {
+            { useMemo(() => {
                 return (
                     options &&
                     options
@@ -73,8 +74,7 @@ const Card = () => {
             </div>
 
             {   showNext &&
-                <button onClick={nextQ}
-                className='bg-select rounded-12 text-lg font-bold px-8 py-4 mt-6 text-white float-right shadow-md active:bg-white active:outline-none active:text-select border-2 border-select  active:border-select'>
+                <button onClick={nextQ} className='btn'>
                     Next
                 </button>
             }

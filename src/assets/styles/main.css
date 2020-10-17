@@ -682,6 +682,42 @@ body {
   border-color: rgba(234, 130, 130, var(--border-opacity));
 }
 
+.btn {
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  border-radius: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1.5rem;
+  --text-opacity: 1;
+  color: #F9A826;
+  color: rgba(249, 168, 38, var(--text-opacity));
+  float: right;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-width: 2px;
+  --border-opacity: 1;
+  border-color: #F9A826;
+  border-color: rgba(249, 168, 38, var(--border-opacity));
+}
+
+.btn:active {
+  outline: 0;
+}
+
+.btn:hover {
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: #F9A826;
+  background-color: rgba(249, 168, 38, var(--bg-opacity));
+}
+
 .space-y-0 > :not(template) ~ :not(template) {
   --space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--space-y-reverse)));

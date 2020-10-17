@@ -22,4 +22,15 @@ body {
     @apply bg-wrong text-white border-wrong;
 }
 
+.btn {
+    @apply bg-white rounded-12 text-lg font-bold px-8 py-4 mt-6 text-select float-right shadow-md border-2 border-select;
+}
+
+.btn:active {
+    @apply outline-none;
+}
+.btn:hover {
+    @apply text-white bg-select;
+}
+
 @import "tailwindcss/utilities";
