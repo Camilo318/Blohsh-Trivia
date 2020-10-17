@@ -19,6 +19,12 @@ module.exports = {
       }
     },
   },
-  variants: {},
+  variants: {
+    backgroundColor: ['active'],
+    outline: ['active'],
+    textColor: ['active'],
+    borderColor: ['active'],
+    borderWidth: ['active']
+  },
   plugins: [],
 }
