@@ -50,13 +50,11 @@ const Card = () => {
 
 
     return (
-        <div className='bg-white rounded-24 px-4 sm:px-8 py-8 relative w-full max-w-lg mx-auto'>
+        <div className='card sm:px-8'>
             <h3
             className='text-lg sm:text-2xl font-bold text-heading'>
                 {data.results && data.results[counter].question}
             </h3>
-
-            <div>
             { useMemo(() => {
                 return (
                     options &&
@@ -71,7 +69,6 @@ const Card = () => {
                     })
                 )}, [options])
             }    
-            </div>
 
             {   showNext &&
                 <button onClick={nextQ} className='btn'>

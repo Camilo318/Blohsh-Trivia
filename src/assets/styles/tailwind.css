@@ -33,4 +33,8 @@ body {
     @apply text-white bg-select;
 }
 
+.card {
+    @apply bg-white rounded-24 px-4 py-8 relative w-full max-w-lg mx-auto;
+}
+
 @import "tailwindcss/utilities";
