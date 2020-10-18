@@ -13,6 +13,11 @@ const appStateReducer = (state, action) => {
                 ...state,
                 myCorrectQ: state.myCorrectQ + 1
             }
+        case 'restart game':
+            return {
+                ...state,
+                myCorrectQ: 0
+            }
         default:
             return state
     }

@@ -5,7 +5,7 @@ import {useAppState} from './AppContext'
 const getData = api => fetch(api).then(res => res.json())
 
 const Card = ({history}) => {
-    console.log('I am running 😁')
+    
     const [data , setData] = useState([])
     const [counter, setCounter] = useState(0)
     const [options, setOptions] = useState([])
@@ -49,7 +49,6 @@ const Card = ({history}) => {
         history.push('/results')
     }
     const checkAnswer = (e) => {
-        console.log('Checking')
         const selectedOption = e.currentTarget.dataset.q
 
         if (selectedOption === correct) {
@@ -85,7 +84,7 @@ const Card = ({history}) => {
                     })
                 )}, [options])
             }    
-            <p>
+            <p className='text-base font-light text-heading mt-2'>
                 {state.myCorrectQ} correct question out of
                 {' ' + state.totalQ}
             </p>
