@@ -19,7 +19,7 @@ const appStateReducer = (state, action) => {
 }
 
 const initialState = {
-    totalQ: 15,
+    totalQ: 3,
     myCorrectQ: 0
 }
 

@@ -15,7 +15,7 @@ const Card = () => {
     const [state, dispatch] = useAppState()
 
     useLayoutEffect(() => {
-        getData('https://opentdb.com/api.php?amount=15&category=15&difficulty=easy&type=multiple')
+        getData('https://opentdb.com/api.php?amount=3&category=15&difficulty=easy&type=multiple')
         .then(data => setData(data))
 
     }, [])
@@ -76,7 +76,8 @@ const Card = () => {
                 )}, [options])
             }    
             <p>
-                {state.myCorrectQ}
+                {state.myCorrectQ} correct question out of
+                {' ' + state.totalQ}
             </p>
             {   showNext &&
                 <button onClick={nextQ} className='btn'>
