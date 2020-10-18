@@ -8,6 +8,11 @@ export const useAppState = () => useContext(AppContext)
 
 const appStateReducer = (state, action) => {
     switch(action.type) {
+        case 'correct answer':
+            return {
+                ...state,
+                myCorrectQ: state.myCorrectQ + 1
+            }
         default:
             return state
     }

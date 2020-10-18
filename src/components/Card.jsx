@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState, useMemo } from 'react'
 import Option from './Option'
-import questions from './data.json'
+import {useAppState} from './AppContext'
 
 const getData = api => fetch(api).then(res => res.json())
 
@@ -11,6 +11,8 @@ const Card = () => {
     const [options, setOptions] = useState([])
     const [correct, setCorrect] = useState('')
     const [showNext, setShowNext] = useState(false)
+
+    const [state, dispatch] = useAppState()
 
     useLayoutEffect(() => {
         getData('https://opentdb.com/api.php?amount=15&category=15&difficulty=easy&type=multiple')
@@ -43,6 +45,10 @@ const Card = () => {
         if (selectedOption === correct) {
             e.currentTarget.classList.add('correct')
             setShowNext(true)
+            dispatch({
+                type: 'correct answer',
+                payload: ''
+            })
         } else {
             e.currentTarget.classList.add('wrong')
         }
@@ -69,7 +75,9 @@ const Card = () => {
                     })
                 )}, [options])
             }    
-
+            <p>
+                {state.myCorrectQ}
+            </p>
             {   showNext &&
                 <button onClick={nextQ} className='btn'>
                     Next
