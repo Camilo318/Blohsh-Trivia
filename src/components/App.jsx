@@ -1,13 +1,16 @@
 import React from 'react'
 import Card from './Card'
+import Results from './Results'
+import { HashRouter, Route, Switch}  from 'react-router-dom'
 
 const App = () => {
     return (
-        <main className='min-h-screen p-3 sm:p-6 grid grid-cols-1 content-center'>
-            <Card />
-        </main>
-        
-        
+        <HashRouter>
+            <Switch>
+                <Route exact path='/' component={Card}/>
+                <Route exact path='/results' component={Results}/>
+            </Switch>
+        </HashRouter>
     )
 }
 

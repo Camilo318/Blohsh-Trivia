@@ -4,7 +4,7 @@ import {useAppState} from './AppContext'
 
 const getData = api => fetch(api).then(res => res.json())
 
-const Card = () => {
+const Card = ({history}) => {
     console.log('I am running 😁')
     const [data , setData] = useState([])
     const [counter, setCounter] = useState(0)
@@ -35,8 +35,18 @@ const Card = () => {
     }, [counter, data])
 
     const nextQ = () => {
-        setCounter(counter => counter + 1)
-        setShowNext(false)
+        if (state.myCorrectQ === state.totalQ) {
+            winGame()
+        } else {
+            setCounter(counter => counter + 1)
+            setShowNext(false)
+        }
+    }
+
+    const winGame = () => {
+        console.clear()
+        console.log('You won')
+        history.push('/results')
     }
     const checkAnswer = (e) => {
         console.log('Checking')
