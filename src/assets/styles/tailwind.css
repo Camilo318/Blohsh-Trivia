@@ -23,14 +23,14 @@ body {
 }
 
 .btn {
-    @apply bg-white rounded-12 text-lg font-bold px-8 py-4 mt-6 text-select float-right shadow-md border-2 border-select;
+    @apply px-12 py-5 border-2 border-heading rounded-12 font-bold text-heading text-xl mt-20 mx-auto block;
 }
 
 .btn:active {
     @apply outline-none;
 }
 .btn:hover {
-    @apply text-white bg-select;
+    @apply text-white bg-heading;
 }
 
 .card {

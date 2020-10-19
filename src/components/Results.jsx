@@ -26,7 +26,7 @@ const Results = ({history}) => {
                 correct answers
             </div>
 
-            <button className='px-12 py-5 border-2 border-heading rounded-12 text-center font-bold text-heading text-xl mt-20 mx-auto block'
+            <button className='btn'
             onClick={restartGame}>
                 Try Again
             </button>
