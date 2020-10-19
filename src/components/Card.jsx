@@ -2,21 +2,14 @@ import React, { useLayoutEffect, useState, useMemo } from 'react'
 import Option from './Option'
 import {useAppState} from './AppContext'
 
-const getData = api => fetch(api).then(res => res.json())
 
-const Card = ({history}) => {
+const Card = ({history, data}) => {
     
-    const [data , setData] = useState([])
     const [counter, setCounter] = useState(0)
     const [options, setOptions] = useState([])
     const [correct, setCorrect] = useState('')
 
     const [state, dispatch] = useAppState()
-
-    useLayoutEffect(() => {
-        getData('https://opentdb.com/api.php?amount=3&category=15&difficulty=easy&type=multiple')
-        .then(data => setData(data))
-    }, [])
 
     useLayoutEffect(() => {
         const correctAnswer = data.results && 
