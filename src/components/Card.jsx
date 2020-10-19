@@ -1,22 +1,15 @@
 import React, { useLayoutEffect, useState, useMemo } from 'react'
 import Option from './Option'
-import questions from './data.json'
+import {useAppState} from './AppContext'
 
-const getData = api => fetch(api).then(res => res.json())
 
-const Card = () => {
-    console.log('I am running 😁')
-    const [data , setData] = useState([])
+const Card = ({history, data}) => {
+    
     const [counter, setCounter] = useState(0)
     const [options, setOptions] = useState([])
     const [correct, setCorrect] = useState('')
-    const [showNext, setShowNext] = useState(false)
 
-    useLayoutEffect(() => {
-        getData('https://opentdb.com/api.php?amount=15&category=15&difficulty=easy&type=multiple')
-        .then(data => setData(data))
-
-    }, [])
+    const [state, dispatch] = useAppState()
 
     useLayoutEffect(() => {
         const correctAnswer = data.results && 
@@ -33,18 +26,35 @@ const Card = () => {
     }, [counter, data])
 
     const nextQ = () => {
-        setCounter(counter => counter + 1)
-        setShowNext(false)
+        dispatch({
+            type: 'correct answer',
+            payload: ''
+        })
+        console.log(state)
+
+        if (state.myCorrectQ === state.totalQ - 1) {
+            endGame()
+        } else {
+            setCounter(counter => counter + 1)
+        }
+    }
+
+    const endGame = () => {
+        history.push('/results')
     }
     const checkAnswer = (e) => {
-        console.log('Checking')
         const selectedOption = e.currentTarget.dataset.q
-
         if (selectedOption === correct) {
             e.currentTarget.classList.add('correct')
-            setShowNext(true)
-        } else {
+            setTimeout(() => {
+                nextQ()
+            }, 800);
+        } 
+        else {
             e.currentTarget.classList.add('wrong')
+            setTimeout(() => {
+                endGame()
+            }, 800);
         }
     }
 
@@ -55,26 +65,20 @@ const Card = () => {
             className='text-lg sm:text-2xl font-bold text-heading'>
                 {data.results && data.results[counter].question}
             </h3>
-            { useMemo(() => {
+            { options &&
+            options
+            .map(opt => ({q: opt, num: Math.random()}))
+            .sort((a, b) => a.num - b.num)
+            .map((item, i) => {
                 return (
-                    options &&
-                    options
-                    .map(opt => ({q: opt, num: Math.random()}))
-                    .sort((a, b) => a.num - b.num)
-                    .map((item, i) => {
-                        return (
-                            <Option q={item.q} key={item.num}
-                            check={checkAnswer} index={i}/>
-                        )
-                    })
-                )}, [options])
-            }    
-
-            {   showNext &&
-                <button onClick={nextQ} className='btn'>
-                    Next
-                </button>
-            }
+                    <Option q={item.q} key={item.num}
+                    check={checkAnswer} index={i}/>
+                )
+            }) } 
+            <p className='text-base font-light text-heading mt-3'>
+                {state.myCorrectQ} correct question out of
+                {' ' + state.totalQ}
+            </p>
         </div>
     )
 }

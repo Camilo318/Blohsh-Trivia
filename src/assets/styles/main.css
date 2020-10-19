@@ -683,26 +683,24 @@ body {
 }
 
 .btn {
-  --bg-opacity: 1;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, var(--bg-opacity));
-  border-radius: 0.75rem;
-  font-size: 1.125rem;
-  font-weight: 700;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-top: 1.5rem;
-  --text-opacity: 1;
-  color: #F9A826;
-  color: rgba(249, 168, 38, var(--text-opacity));
-  float: right;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
   border-width: 2px;
   --border-opacity: 1;
-  border-color: #F9A826;
-  border-color: rgba(249, 168, 38, var(--border-opacity));
+  border-color: #2F527B;
+  border-color: rgba(47, 82, 123, var(--border-opacity));
+  border-radius: 0.75rem;
+  font-weight: 700;
+  --text-opacity: 1;
+  color: #2F527B;
+  color: rgba(47, 82, 123, var(--text-opacity));
+  font-size: 1.25rem;
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .btn:active {
@@ -714,8 +712,8 @@ body {
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
   --bg-opacity: 1;
-  background-color: #F9A826;
-  background-color: rgba(249, 168, 38, var(--bg-opacity));
+  background-color: #2F527B;
+  background-color: rgba(47, 82, 123, var(--bg-opacity));
 }
 
 .card {

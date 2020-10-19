@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
-import Card from './Card'
-import data from './data.json'
+import React from 'react'
+import Results from './Results'
+import { HashRouter, Route, Switch}  from 'react-router-dom'
+import Game from './Game'
 
 const App = () => {
     return (
-        <main className='min-h-screen p-3 sm:p-6 grid grid-cols-1 content-center'>
-            <Card />
-        </main>
-        
+        <HashRouter>
+            <Switch>
+                <Route exact path='/' component={Game}/>
+                <Route exact path='/results' component={Results}/>
+            </Switch>
+        </HashRouter>
     )
 }
 
