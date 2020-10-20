@@ -1,5 +1,8 @@
 import React, { useRef} from 'react'
+import {createMarkup} from './Card'
 const letters = ['A', 'B', 'C', 'D']
+
+
 const Option = ({q, check, index}) => {
     const option = useRef(null)
     return (
@@ -10,7 +13,7 @@ const Option = ({q, check, index}) => {
         className='option text-base sm:text-lg'>
 
         <span className='text-2xl mr-12'>{letters[index]}</span>    
-        <span>{q}</span>
+        <span dangerouslySetInnerHTML={createMarkup(q)}></span>
         </div>
     )
 }
